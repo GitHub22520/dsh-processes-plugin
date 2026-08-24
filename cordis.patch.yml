@@ -1,0 +1,14 @@
+# dsh-processes-plugin 组合包层：进程注册表（宿主平面 singleton）、模型工具、UI 的 RPC 通道。
+#
+# `processes` 行同时是本包的宿主半程（提供 ctx.processes）和浏览器半程
+# （dsh.client 行，模块 node 半程扫描后加载 ./client 的「进程」tab）。
+
+- insert:
+    - id: processes
+      name: dsh-processes-plugin
+
+    - id: tool-processes
+      name: dsh-processes-plugin/tools
+
+    - id: processes-rpc
+      name: dsh-processes-plugin/rpc
