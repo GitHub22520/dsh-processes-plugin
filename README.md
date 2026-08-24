@@ -41,17 +41,23 @@ npx tsdown
 
 ## 在 DSH 中使用
 
-推荐使用 profile 安装插件：
+从 GitHub 获取项目后，在仓库根目录安装并构建：
 
 ```sh
-dsh plugin --profile demo add D:\path\to\dsh-processes-plugin
+git clone https://github.com/GitHub22520/dsh-processes-plugin.git
+cd dsh-processes-plugin
+pnpm install
+npx tsdown
+dsh plugin --profile demo add .
 dsh --profile demo
 ```
 
-也可以在 `deepseek-harness` 仓库中直接通过 patch 运行源码：
+如果项目已经在本地，直接进入该仓库目录执行 `dsh plugin --profile demo add .` 即可。
+
+也可以在 `deepseek-harness` 仓库中通过当前目录的 patch 运行源码：
 
 ```sh
-pnpm dsh web --patch D:\path\to\dsh-processes-plugin\cordis.patch.yml
+pnpm dsh web --patch .\cordis.patch.yml
 ```
 
 打开 DSH Web 界面后，在会话页选择“进程”Tab，即可：
